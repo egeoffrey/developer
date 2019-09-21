@@ -12,6 +12,7 @@ This portal is organized in the following sections:
 * `Develop` - extend eGeoffrey's or contribute with a custom module. Learn how to use the SDK and the other development tools available
 * `Build` - create a portable eGeoffrey package with your custom module
 * `Distribute` - make your package available to other eGeoffrey users by publishing it on our Marketplace
+* `Tools` - eGeoffrey toolset for simplifying development and building operations
 
 ## Not enough?
 

@@ -55,8 +55,3 @@ This approach allows to:
 
 Through specific messages, the config module can save new or updated configuration files. To avoid reloading the entire configuration upon each change, the config module builds up an index of all the files which is saved in the message bus so to re-publish only new or updated files. When a file is deleted, a message with `null` payload is published to the bus.
 
-## Updating the Configuration Schema
-
-Each configuration file has a configuration schema associated with it. This is intended to help developers to evolve their configuration files independently from eGeoffrey. The schema version is automatically added by the config module in the filename when saving the file (e.g. `settings.1.yml` with schema version set to `1`) and is automatically added as part of the topic when publishing to the message bus.
-
-Checking if dealing with the right version of the configuration file and updating it, is up to each individual module. If the configuration has a schema which is not supported, the module should discard the file. In case that configuration is "managed" by the module (e.g. its own configuration file), the module has to implement the logic to update the schema from the received message and invoke the SDK's `upgrade_config(filename, from_version, to_version, content)` to upgrade a configuration file to the given version. The config module will take care of deleting the old version, save the new version and republishing it on the bus.
