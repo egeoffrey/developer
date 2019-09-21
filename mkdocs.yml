@@ -1,0 +1,40 @@
+site_name: eGeoffrey Developer Portal
+site_url: https://www.egeoffrey.com
+#repo_url: https://www.egeoffrey.com/#resources
+#repo_name: www.egeoffrey.com
+nav:
+- Home: index.md
+- Learn: 
+  - Design: learn/design.md
+  - Definitions: learn/definitions.md
+  - Architecture: learn/architecture.md
+  - Components:
+    - Controller: learn/controller.md
+    - Gateway: learn/gateway.md
+    - Database: learn/database.md
+    - Web UI: learn/gui.md
+  - How it works: learn/how-it-works.md
+  - Configuration: learn/configuration.md
+  - Security: learn/security.md
+  - Multi-Tenancy: learn/multi-tenancy.md
+  - Deployment Options: learn/deployment.md
+  - Tools:
+    - cli: learn/cli.md
+    - installer: learn/installer.md
+- Develop:
+  - Getting Started: develop/getting-started.md
+  - SDK: develop/sdk.md
+  - Classes:
+    - Module: develop/module.md
+    - Scheduler: develop/scheduler.md
+  - Components:
+    - Sensor: develop/sensor.md
+    - Rule: develop/rule.md
+    - GUI Menu: develop/gui_menu.md
+    - GUI Page: develop/gui_page.md
+  - Versioning: develop/versioning.md
+  - Upgrading: develop/upgradeing.md
+- Build: build/index.md
+- Distribute: distribute/index.md
+theme: 
+  name: cinder
