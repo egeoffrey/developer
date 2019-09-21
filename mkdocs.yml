@@ -43,7 +43,7 @@ nav:
 - Distribute: 
   - Marketplace: distribute/marketplace.md
 - Tools:
-  - egeoffrey-cli: develop/tools/cli.md
-  - egeoffrey-installer: develop/tools/installer.md
+  - egeoffrey-cli: tools/cli.md
+  - egeoffrey-installer: tools/installer.md
 theme: 
   name: cinder
