@@ -10,7 +10,11 @@ In addition, the same image has to be tagged with `<egeoffrey-package-name>:<ver
     
 It is the developer's responsibility to keep aligned the code in Github and the image in Dockerhub. 
 
-To build your package you can use `egeoffrey-cli build amd64,arm` which will create the docker images for your and push them to your Dockerhub account.
+To build your package you can use:
+
+    egeoffrey-cli build amd64,arm
+    
+which will create the docker images for your and push them to your Dockerhub account. You can build for one or the two architectures for each run.
 
 ## Supported Architectures
 

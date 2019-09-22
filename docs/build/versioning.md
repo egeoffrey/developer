@@ -22,7 +22,7 @@ During the build phase, the Docker image will be named according to the branch n
 
 ### The Version Number
 
-The version is a number which the developer increases when a new minor or major version is released. It has no dependency with the other eGeoffrey components so is up to developer how to play with major and minor versions. For every version there must always be a git tag associated to the latest commit so to allow keeping track of the snapshot of the code for that particular version.
+The version is a number which the developer increases when a new minor or major version is released. It has no dependency with the other eGeoffrey components so is up to developer how to play with major and minor versions. For every version there must always be a git tag associated to the latest commit so to allow keeping track of the snapshot of the code for that particular version. When committing with `egeoffre-cli`, this is done automatically.
 
 The same apply when building the Docker image, an additional tag with the version number has to be pushed in addition to the one with the branch (e.g. `egeoffrey-gui:1.0-amd64`). When building with `egeoffre-cli`, this is done automatically. In this way, in addition to the latest stable version, for each version an image will be kept allowing to revert to a previous version if needed.
 

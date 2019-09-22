@@ -41,9 +41,10 @@ nav:
   - Versioning: build/versioning.md
   - Updating: build/updating.md
 - Distribute: 
-  - Marketplace: distribute/marketplace.md
+  - Marketplace: distribute/publish.md
 - Tools:
   - egeoffrey-cli: tools/cli.md
   - egeoffrey-installer: tools/installer.md
+google_analytics: ['UA-1633536-6', 'developer.egeoffrey.com']
 theme: 
   name: cinder
