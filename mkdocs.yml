@@ -1,7 +1,7 @@
 site_name: eGeoffrey Developer Portal
 site_url: https://www.egeoffrey.com
-#repo_url: https://www.egeoffrey.com/#resources
-#repo_name: www.egeoffrey.com
+repo_url: https://www.egeoffrey.com/#resources
+repo_name: egeoffrey.com
 nav:
 - Home: index.md
 - Learn: 
@@ -47,4 +47,6 @@ nav:
   - egeoffrey-installer: tools/installer.md
 google_analytics: ['UA-1633536-6', 'developer.egeoffrey.com']
 theme: 
-  name: cinder
+  name: material
+extra_css:
+  - css/custom.css
