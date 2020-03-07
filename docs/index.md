@@ -9,9 +9,8 @@ If you are not a developer and instead looking for the User Manual and the Getti
 This portal is organized in the following sections:
 
 * `Learn` - understand more about eGeoffrey's design principles, its architecture and the main components
-* `Develop` - extend eGeoffrey's or contribute with a custom module. Learn how to use the SDK and the other development tools available
-* `Build` - create a portable eGeoffrey package with your custom module
-* `Distribute` - make your package available to other eGeoffrey users by publishing it on our Marketplace
+* `Develop & Build` - extend eGeoffrey's or contribute with a custom module. Learn how to develop your code, create a portable eGeoffrey package and make it available to other eGeoffrey users by publishing it on our Marketplace
+* `SDK` - classes and utilities made available by the eGeoffrey SDK and API
 * `Tools` - eGeoffrey toolset for simplifying development and building operations
 
 ## Not enough?

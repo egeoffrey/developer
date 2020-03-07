@@ -19,11 +19,12 @@ Upon startup, the controller/config reads out all the files in the `config` dire
 ## Receive the Configuration
 
 Any module which needs a configuration file, has to subscribe to a specific topic. The eGeoffrey SDK makes this easier, providing the following functions from within the Module class:
-- `add_configuration_listener(args, version=None, wait_for_it=False)`: add a listener for the given configuration request (will call on_configuration())
-- `add_request_listener(from_module, command, args)`: add a listener for the messages addressed to this module (will call on_message())
-- `add_broadcast_listener(from_module, command, args)`: add a listener for broadcasted messages from the given module (will call on_message())
-- `add_inspection_listener(from_module, to_module, command, args)`: add a listener for intercepting messages from a given module to a given module (will call on_message())
-- `remove_listener(topic)`: remove a topic previously subscribed
+
+* `add_configuration_listener(args, version=None, wait_for_it=False)`: add a listener for the given configuration request (will call on_configuration())
+* `add_request_listener(from_module, command, args)`: add a listener for the messages addressed to this module (will call on_message())
+* `add_broadcast_listener(from_module, command, args)`: add a listener for broadcasted messages from the given module (will call on_message())
+* `add_inspection_listener(from_module, to_module, command, args)`: add a listener for intercepting messages from a given module to a given module (will call on_message())
+* `remove_listener(topic)`: remove a topic previously subscribed
 
 Once the listener is added, the configuration will be received in the `on_configuration(message)` callback.
 
@@ -36,7 +37,9 @@ Returning `false` from a configuration message received by `on_configuration(mes
 
 ## Required Configuration Files
 
-There are situations in which a module needs a specific configuration file before starting. For example the database module has to know where the database is before connecting. When a configuration listener is added with `wait_for_it` set to true, the module will not start (hence `on_start()` will not be called) until ALL the required configurations have been received.
+There are situations in which a module needs a specific configuration file before starting. For example the database module has to know where the database is before connecting. 
+
+When a configuration listener is added with `wait_for_it` set to true, the module will not start (hence `on_start()` will not be called) until ALL the required configurations have been received.
 
 ## Default Configuration
 

@@ -1,4 +1,4 @@
-# Updating
+# Upgrading
 
 in eGeoffrey, each package has its own lifecycle, independent from the other so there is no concept of eGeoffrey update but each package can be updated individually. However, when running `egeoffrey-cli update`, the latest version of all the packages is downloaded and deployed.
 

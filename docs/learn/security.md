@@ -61,5 +61,7 @@ This is referring to users operating within the same house accessing the web GUI
 
 ##  Database
 
-Ideally the database should be shared among different houses. But since Redis does not provide (yet) neither strong authentication mechanism nor ACLs, every house will have its own dedicated database server hence no authentication would be required.
+By design every house is supposed to be hosted on a dedicated Redis database server. Password authentication, if needed, is supported in this configuration.
+
+If MongoDB is used as a backend database, a single database can host multiple houses (this scenario would not be possible with Redis). Authentication with username and password is supported in this configuration. It is up to the admin to provision users to MongoDB, ideally assigning a dbAdmin role only for the assigned database (e.g. the house_id) to the user.
 

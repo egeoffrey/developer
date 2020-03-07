@@ -18,13 +18,17 @@ In this way the user will consistently receive always the latest version of the 
 
 It is highly recommended to have a `master` branch with the latest stable version so to allow the Marketplace app to interact with your package smoothly.
 
-During the build phase, the Docker image will be named according to the branch name (e.g. `egeoffrey-gui:master-amd64`)
+During the build phase, the Docker image will be named according to the branch name (e.g. `egeoffrey-gui:master-amd64`).
+
+Developers can switch to a new branch by running `egeoffre-cli new_branch <branch_name>` (e.g. `egeoffre-cli new_branch development`). The utility automatically updates the manifest file with the new branch name and checkout into it.
 
 ### The Version Number
 
 The version is a number which the developer increases when a new minor or major version is released. It has no dependency with the other eGeoffrey components so is up to developer how to play with major and minor versions. For every version there must always be a git tag associated to the latest commit so to allow keeping track of the snapshot of the code for that particular version. When committing with `egeoffre-cli`, this is done automatically.
 
-The same apply when building the Docker image, an additional tag with the version number has to be pushed in addition to the one with the branch (e.g. `egeoffrey-gui:1.0-amd64`). When building with `egeoffre-cli`, this is done automatically. In this way, in addition to the latest stable version, for each version an image will be kept allowing to revert to a previous version if needed.
+The same apply when building the Docker image, an additional tag with the version number has to be pushed in addition to the one with the branch (e.g. `egeoffrey-gui:1.0-amd64`). When building with `egeoffre-cli`, this is done automatically. In this way, in addition to the latest stable version (always mapped to the master branch), for each version at least an image will be kept allowing to revert to a previous version if needed.
+
+Developers can switch to a new version by running `egeoffre-cli new_version <version>` (e.g. `egeoffre-cli new_version 1.1`). The utility automatically updates the manifest file with the new version.
 
 ### The Revision Number
 

@@ -1,18 +1,22 @@
 # The eGeoffrey Database
 
-Redis has been selected as the preferred option for storing eGeoffrey's data. This is because it is light and especially when running on a Raspberry Pi, does not stress the SD card too much with continuous writing operations.
-
 To provide a controlled and structured access to the data, the only module which can access the database is `controller/db`. Queries have to be submitted in the same way eGeoffrey's modules traditionally communicates, e.g. through the message bus. `controller/db` will take care of executing the query returning the result back.
 
 To ensure a decent user experience, a pre-configured database image is provided in the package `egeoffrey-database`, which is automatically deployed by the installer. 
+
+**Redis** has been selected as the preferred option for storing eGeoffrey's data. This is because it is light and especially when running on a Raspberry Pi, does not stress the SD card too much with continuous writing operations.
 
 The Redis database will accept connections on the following port:
 
 * `6379/tcp`
 
-## Database Schema
+As an alternative option, **MongoDB** is also supported by `controller/db` and is delivered by the `egeoffrey-database-mongodb` package. However, this options is intended for a complex ISP scenario when hosting multiple houses and Redis approach to keep everything in memory would come with a high cost. For a standalone, raspberrypi-based installation, Redis is always the way to go.
 
-Redis is a simple key-value pair database with some capabilities to store timeseries data (e.g. the so called Sorted Set Time Series). 
+The MongoDB database will accept connections on the following port:
+
+* `27017/tcp`
+
+## Database Schema
 
 eGeoffreys stores the following information in the database:
 
@@ -23,5 +27,5 @@ eGeoffreys stores the following information in the database:
 
 The `house_id` is not used as part of the database schema for two reasons:
 
-* each house is supposed to have its dedicated Redis server and, if not, at least a dedicated database number
+* each house is supposed to have its dedicated database
 * renaming the `house_id` would not require renaming all the keys

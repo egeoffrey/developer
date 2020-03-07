@@ -13,35 +13,37 @@ nav:
     - Gateway: learn/components/gateway.md
     - Database: learn/components/database.md
     - Web UI: learn/components/gui.md
+    - Mobile App: learn/components/mobile.md
   - How it works: learn/how-it-works.md
   - Configuration: learn/configuration.md
   - Security: learn/security.md
   - Multi-Tenancy: learn/multi-tenancy.md
   - Deployment Options: learn/deployment.md
-- Develop:  
+  - Manifest File: learn/manifest.md
+  - Versioning: learn/versioning.md
+  - Upgrading: learn/upgrading.md
+- Develop & Build:  
   - Overview: develop/overview.md
-  - eGeoffrey SDK: develop/sdk.md
+  - Develop: develop/develop.md
+  - Build: develop/build.md
+  - Distribute: develop/distribute.md
+
+- SDK:
+  - Overview: sdk/overview.md
   - Classes:
-    - Module: develop/classes/module.md
-    - Message: develop/classes/message.md
-    - Session: develop/classes/session.md
-    - Mqtt_client: develop/classes/mqtt_client.md
-    - Scheduler: develop/classes/scheduler.md
-    - Cache: develop/classes/cache.md
-  - Utils: 
-    - Command: develop/utils/command.md
-    - DateTimeUtils: develop/utils/datetimeutils.md
-    - Exceptions: develop/utils/exceptions.md
-    - Numbers: develop/utils/numbers.md
-    - Strings: develop/utils/strings.md
-    - Web: develop/utils/web.md
-- Build: 
-  - Overview: build/overview.md
-  - Manifest: build/manifest.md
-  - Versioning: build/versioning.md
-  - Updating: build/updating.md
-- Distribute: 
-  - Marketplace: distribute/publish.md
+    - Module: sdk/classes/module.md
+    - Message: sdk/classes/message.md
+    - Session: sdk/classes/session.md
+    - Mqtt_client: sdk/classes/mqtt_client.md
+    - Scheduler: sdk/classes/scheduler.md
+    - Cache: sdk/classes/cache.md
+  - Utils:
+    - Command: sdk/utils/command.md
+    - DateTimeUtils: sdk/utils/datetimeutils.md
+    - Exceptions: sdk/utils/exceptions.md
+    - Numbers: sdk/utils/numbers.md
+    - Strings: sdk/utils/strings.md
+    - Web: sdk/utils/web.md
 - Tools:
   - egeoffrey-cli: tools/cli.md
   - egeoffrey-installer: tools/installer.md

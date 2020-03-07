@@ -12,7 +12,7 @@ eGeoffrey was born with **simplicity** and **flexibility** in mind. Start config
 
 You can also easily create rules to be automatically alerted whenever a specific situation is taking place, triggering a number of notifications means.
 
-## Requirements
+## Key Capabilities
 
 The main themes eGeoffrey's design was intended to address, in order of priority are the following:
 

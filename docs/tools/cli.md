@@ -26,10 +26,11 @@ The following options are allowed. Multiple options can be provided.
 
 ```
   -d <directory>                      set the working directory
-  -f <filename>                       set custom docker-compose.yml filename
+  -c <filename>                       set custom docker-compose.yml filename
   -v                                  enable debug output
   -q                                  quite mode - do not run interactively
   -o                                  offline mode
+  -f                                  force an action
 ```
 
 #### Command
@@ -58,10 +59,15 @@ egeoffrey-cli must be provided with one of the following command to execute a sp
 ```  
 
 ```  
-  commit '<description>'              Commit changes to the local and remote git repository
   build <amd64,arm>                   Build a docker image and push it upstream
   build_sdk <image> <amd64,arm>       Build a SDK docker image and push it upstream
+  commit '<description>'              Commit changes to the local and remote git repository
+  commit_sdk '<description>'          Commit SDK changes to the local and remote git repository
+  init_repo <type> <name> <git_user>  Create a local empty repository and set a remote upstream URL
   make_collection                     Create a collection including the configured packages
+  merge                               Merge the current branch into master
+  new_branch <branch_name>            Switch to a different branch
+  new_version <version>               Switch to a new version
 ```  
 
 #### Arguments

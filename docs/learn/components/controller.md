@@ -80,7 +80,10 @@ The following additional environment variables can control specific advanced set
 
 * `EGEOFFREY_DATABASE_HOSTNAME`: override the database hostname from the configuration file
 * `EGEOFFREY_DATABASE_PORT`: override the database port from the configuration file
-* `EGEOFFREY_DATABASE_NUMBER`: override the database number from the configuration file
+* `EGEOFFREY_DATABASE_NAME`: override the database name/number from the configuration file
+* `EGEOFFREY_DATABASE_USERNAME`: override the database username from the configuration file
+* `EGEOFFREY_DATABASE_PASSWORD`: override the database password from the configuration file
 * `EGEOFFREY_CONFIG_DIR`: override the directory where the configuration resides (default to `config`)
 * `EGEOFFREY_CONFIG_FORCE_RELOAD`: force realoading the configuration from the filesystem (default to `0`)
+* `EGEOFFREY_CONFIG_FORCE_RELOAD_TIMEOUT`: when reloading the configuraiton, for how many seconds waiting for the old settings already in the bus to clear up (default to `10`)
 * `EGEOFFREY_CONFIG_ACCEPT_DEFAULTS`: accept default configuration files provided by other packages in the manifest file (default to `1`)

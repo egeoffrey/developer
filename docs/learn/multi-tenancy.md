@@ -4,7 +4,7 @@ Having the ability to run multiple houses is key and a differentiator for eGeoff
 
 ## Gateway
 
-The gateway component is in common among multiple houses. 
+The gateway component is supposed to be common among multiple houses. 
 
 * The topic structure allows to easily isolate logically individual houses (provided of course they have a different `house_id`)
 * Since the same `house_id` and `passcode` (username and password for the gateway) is used for all the modules belonging to the same house, the service provider has add a single user to the gateway to provide a new house
@@ -12,7 +12,7 @@ The gateway component is in common among multiple houses.
 
 ## Modules
 
-Every house will run its own dedicated modules connecting to a shared gateway. This choice has been taken to achieve the following:
+Every house will run its own dedicated modules (including the Web UI) connecting to a shared gateway. This choice has been taken to achieve the following:
 
 * Code simplicity since every module should keep otherwise a map between the house and its entire runtime environment and challenges in distinguishing between shared modules and house-dedicated modules in the communication
 * Users can restart their own components without affecting all the houses which could have suffered a downtime otherwise
@@ -25,4 +25,7 @@ Every house will run its own dedicated modules connecting to a shared gateway. T
 
 ## Database
 
-Ideally the database should be shared in a multi-tenant environment. However, since Redis does not provide robust authentication/authorization mechanisms, it has been chosen to have a different database for each house. 
+Since Redis does not provide robust authentication/authorization mechanisms for this scenario, either use a different redis database for each house or use a single, shared MongoDB database. In this scenario each database map to a different house. It is up to the admin to provision users to MongoDB, ideally assigning a dbAdmin role only for the assigned database (e.g. the house_id) to the user.
+
+
+
