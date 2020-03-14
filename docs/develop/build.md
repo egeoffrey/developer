@@ -4,12 +4,12 @@ In eGeoffrey, what eventually the end user will consume is a Docker image. This 
 
 Despite eGeoffrey is based on Docker containers, there is no need to do anything with Docker directly since the `egeoffrey-cli` utility has plenty of functionalities also for building the docker image for you.
 
-Once you are fine with your code, just run `egeoffrey-cli build amd64,arm` which will:
+Once you are fine with your code, just run `egeoffrey-cli build` which will:
 
 * Build the Docker image based on the provided Dockerfile, naming it using the branch and version specified in the manifest file
 * Publish the Docker image to DockerHub based on the account provided in the manifest file
 
-If your operating system is not capable of building for multiple architectures, you need to run the command with the supported architecture only and run it again on a different system capable of building for the other architecture.
+By default, the build command builds for all the architectures. If your operating system is not capable of building for multiple architectures, you need to run the command with the supported architecture only as additional parameter and run it again on a different system capable of building for the other architecture.
 
 The naming convention of the resulting Docker image `egeoffrey-cli` creates is the following:
 
@@ -17,11 +17,12 @@ The naming convention of the resulting Docker image `egeoffrey-cli` creates is t
 
 In addition, the same image will be tagged with `<egeoffrey-package-name>:<version>-<architecture>` so to provide always an updated image of the latest version.
     
-It is the developer's responsibility to keep aligned the code in Github and the image in Dockerhub by running  `egeoffrey-cli commit` and `egeoffrey-cli build` sequentially.
+It is the developer's responsibility to keep aligned the code in Github and the image in Dockerhub by running `egeoffrey-cli commit` and `egeoffrey-cli build` sequentially.
 
 ## Supported Architectures
 
-Developers are strongly encouraged to build the same image for both `amd64` and `arm` architecture so to allow users to have the same functionalities a traditional computer/server (usually `amd64`) and a device like a Raspberry Pi (`arm`)
+Developers are strongly encouraged to build the same image for both `amd64` and `arm32v6` architectures so to allow users to have the same functionalities a traditional computer/server (usually `amd64`) and a device like a Raspberry Pi (`arm32v6`).
+If for any reason your package has to be built for a different set of architectures, those can be made explicit by adding them as an array to the `arch` setting of your manifest file (the `build` command will the use this set when building).
 
 ## The Build Process
 
@@ -42,4 +43,6 @@ Developers can use the one which fits best their requirements. Usually, if no Ra
 
 SDK images follow the same naming convention of any other image `egeoffrey-sdk-<os>:<branch>-<architecture>`.
 
-When building for both amd64 and arm it is recommended to pass the architecture as a build argument so to leverage the same Dockerfile for both (when building with `egeoffrey-cli` this is done automatically)
+When building for both amd64 and arm it is recommended to pass the architecture as a build argument so to leverage the same Dockerfile for both (when building with `egeoffrey-cli` this is done automatically).
+
+If you need to build against a specific version of the SDK, add a `sdk_branch` directive to your manifest file specifying the version/branch you need to build against. `egeoffrey-cli build` will then use this information when making up your package.

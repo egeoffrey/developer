@@ -41,6 +41,8 @@ The manifest contains the following information:
         * `placeholder`: placeholder text
 * `container_config`: object that `egeoffrey-cli` will merge with the `docker-compose` service definition 
 * `minimum_sdk_version`: the minimum version of the SDK (with or without revision) the package requires to run (*optional*)
+* `sdk_branch`: the SDK version to build the package against (default to "master")
+* `arch`: an array of architectures to build the package for (default to "amd", "arm32v6")
 
 When the watchdog reads a manifest file, before publishing it, it adds the following entries:
 
