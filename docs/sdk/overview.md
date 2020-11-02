@@ -1,43 +1,19 @@
 # eGeoffrey SDK
 
-To avoid re-inventing the wheel every time, most of the common functionalities needed to make a module running have been integrated into the eGeoffrey SDK which also acts as a sort of library. EVERY module has to be based on the SDK and inherit from the `Module` class; eGeoffrey core components including the watchdog, the controller, the GUI, etc. are all based upon the same principle.
+To avoid re-inventing the wheel every time, most of the common functionalities needed to make a module running have been integrated into the eGeoffrey SDK. 
 
-Regardless of the language you are programming in, once you create your class as a subclass of Module (or its subclasses), you can leverage common functionalities provided by the class as well as callback which are invoked upon specific events (connected to the gateway, receiving a message, etc.)
+Every eGeoffrey module has to be based on the SDK; eGeoffrey core components including the controller, the GUI, etc. are all based upon the same principle.
 
-The SDK is available in both Python and Javascript.
+eGeoffrey SDK is providing both a set of [reusable functions for developing](/sdk/develop/) your eGeoffrey code AND a [pre-configured runtime](/sdk/images/) environment for easily build and publish your custom packages. 
 
-Despite for completeness in the following sections a detailed description of all the main classes of the SDK will be provided, if you are a developer you should be interested only in the `Module` class.
+## Programming Languages
 
-## Levering the SDK
+The ambitious of eGeoffrey is to be multi-language whenever possible. For this reason the communication takes place through a language-agnostic message bus and common capabilities can be delivered through language-specific SDKs. A the time of writing the following languages are supported:
 
-There are three ways to leverage the Classes and Utils described in the following sections:
+* Python: used by all the modules
+* Javascript: used by the web interface
 
-### Module Class
+## Supported CPU Architectures
 
-Whenever you write your own module, you have to:
-
-1. Import the Class:
-    * in Python you need to do so at the beginning of your code e.g.  `from sdk.python.module.service import Service`
-    * in Javascript you need to import the file e.g. `<script src="sdk/javascript/module/module.js"></script>`
-2. Create your new class inhering from `Module` or one of its subclasses (`Service`, `Notification`, `Controller`, `Interaction`)
-
-### Other Classes
-
-If you need to use a function of one of the SDK classes, you have to:
-
-1. Import the Class:
-    * in Python you need to do so at the beginning of your code e.g.  `from sdk.python.utils.datetimeutils import DateTimeUtils`
-    * in Javascript you need to import the file e.g. `<script src="sdk/javascript/utils/datetimeutils.js"></script>`
-2. Create an instance of the class and invoke its methods
-
-### Utils
-
-For the SDK utilities which does not neet a class to be created, you have to:
-
-1. Load the code:
-    * in Python you need to do so at the beginning of your code e.g.  `import sdk.python.utils.web`
-    * in Javascript you need to import the file e.g. `<script src="sdk/javascript/utils/strings.js"></script>`
-2. Invoke of the the functions
-    * In Python you need to use the full name (e.g. sdk.python.utils.web.get(url))
-
-
+The runtime environment of eGeoffrey SDK is available for both `amd64` and `arm32v6` CPU architectures so to 
+allow developers to build their packages and provide the same functionalities for traditional computer/server (usually `amd64`) and IoT devices like a Raspberry Pi (`arm32v6`).

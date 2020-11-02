@@ -4,49 +4,53 @@ repo_url: https://www.egeoffrey.com/#resources
 repo_name: egeoffrey.com
 nav:
 - Home: index.md
-- Learn: 
-  - Design: learn/design.md
-  - Definitions: learn/definitions.md
-  - Architecture: learn/architecture.md
-  - Components:
-    - Controller: learn/components/controller.md
-    - Gateway: learn/components/gateway.md
-    - Database: learn/components/database.md
-    - Web UI: learn/components/gui.md
-    - Mobile App: learn/components/mobile.md
-  - How it works: learn/how-it-works.md
-  - Configuration: learn/configuration.md
-  - Security: learn/security.md
-  - Multi-Tenancy: learn/multi-tenancy.md
-  - Deployment Options: learn/deployment.md
-  - Manifest File: learn/manifest.md
-  - Versioning: learn/versioning.md
-  - Upgrading: learn/upgrading.md
-- Develop & Build:  
-  - Overview: develop/overview.md
-  - Develop: develop/develop.md
-  - Build: develop/build.md
-  - Distribute: develop/distribute.md
 
-- SDK:
+- Create a New Package:  
+  - Requirements: develop/requirements.md
+  - Setting up the Environment: develop/setup.md
+  - Develop & Build: develop/develop.md
+  - Test your Code: develop/test.md
+  - Distribute the Package: develop/distribute.md
+  - Update your Code: develop/update.md
+- Contribute to Existing Packages: develop/contribute.md 
+
+- eGeoffrey Architecture:
+   - Design Principles: architecture/design.md
+   - Definitions: architecture/definitions.md
+   - eGeoffrey Components: architecture/components.md
+   - Core Components:
+     - Gateway: architecture/core/gateway.md
+     - Database: architecture/core/database.md
+     - Controller: architecture/core/controller.md
+     - GUI: architecture/core/gui.md
+   - Configuration Management: architecture/configuration.md
+   - Startup Process: architecture/startup.md
+   - Versioning: architecture/versioning.md
+   - Security: architecture/security.md
+   - Multi-Tenancy: architecture/multi-tenancy.md
+   - Deployment Options: architecture/deployment.md
+
+- eGeoffrey SDK:
   - Overview: sdk/overview.md
-  - Classes:
+  - Using the SDK: sdk/use.md
+  - The Manifest File: sdk/manifest.md
+  - Configure the Environment: sdk/configuration.md
+  - The Bootstrap Process: sdk/bootstrap.md
+  - SDK Classes:
     - Module: sdk/classes/module.md
     - Message: sdk/classes/message.md
     - Session: sdk/classes/session.md
     - Mqtt_client: sdk/classes/mqtt_client.md
     - Scheduler: sdk/classes/scheduler.md
     - Cache: sdk/classes/cache.md
-  - Utils:
+  - SDK Utils:
     - Command: sdk/utils/command.md
     - DateTimeUtils: sdk/utils/datetimeutils.md
     - Exceptions: sdk/utils/exceptions.md
     - Numbers: sdk/utils/numbers.md
     - Strings: sdk/utils/strings.md
     - Web: sdk/utils/web.md
-- Tools:
-  - egeoffrey-cli: tools/cli.md
-  - egeoffrey-installer: tools/installer.md
+
 google_analytics: ['UA-1633536-6', 'developer.egeoffrey.com']
 theme: 
   name: material

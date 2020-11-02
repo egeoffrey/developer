@@ -1,4 +1,3 @@
-# Deployment Options
 
 A lot of effort has been made to allow eGeoffrey to be deployed many different ways. Its distributed architecture made of isolated components interacting through a shared message bus, allows to position each component on any platform and wherever you need.
 

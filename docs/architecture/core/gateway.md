@@ -10,6 +10,8 @@ Modules connecting to the gateway can connect to port:
 * `8883/tcp`: mqtts tcp protocol
 * `443/tcp`: websocket protocol
 
+As an alternative option, **VerneMQ** is also supported and is delivered by the `egeoffrey-gateway-vernemq` package. However, this options is intended for a complex ISP scenario when hosting multiple houses since allows more granular access control and monitoring capabilities.
+
 ## Communication
 
 To allow a structured communication among the modules, a topic naming convention is defined as follows:

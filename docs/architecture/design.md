@@ -1,8 +1,3 @@
-# Design
-
-This is a summary of the foundational principles that have been taken into account during the development of eGeoffrey.
-
-## Why yet another Home Automation Suite?
 
 There are hundreds of home automation suites around and dozens of new solutions made available every single day. So why yet another piece of software? 
 
@@ -12,7 +7,7 @@ eGeoffrey was born with **simplicity** and **flexibility** in mind. Start config
 
 You can also easily create rules to be automatically alerted whenever a specific situation is taking place, triggering a number of notifications means.
 
-## Key Capabilities
+This is a summary of the foundational principles that have been taken into account during the design of eGeoffrey, key capabilities and definitions you would need to know before starting developing.
 
 The main themes eGeoffrey's design was intended to address, in order of priority are the following:
 
@@ -21,9 +16,7 @@ The main themes eGeoffrey's design was intended to address, in order of priority
 3. **Multi-tenancy**: ability to host multiple "houses" within the same eGeoffrey instance with authentication/authorization mechanisms
 4. **Modern and easy to use UI**: to guide the users with dedicated wizards throughout the configuration process and with the ability to display any information in multiple ways to meet users' needs.
 
-## Foundational Principles
-
-The a technical standpoint, those have been the development principles guiding the direction of eGeoffrey:
+From a technical standpoint, those have been the development principles guiding the direction of eGeoffrey:
 
 * **Pack dependencies together with the software**
     * This avoids conflicts and/or missing packages issues
@@ -49,4 +42,3 @@ The a technical standpoint, those have been the development principles guiding t
     * they leverage the message bus to do discovery and configuration
     * allows adding a new pieces without any change to core code thus facilitating user to contribute
     * each component follows its own development cycle, no dependencies
-

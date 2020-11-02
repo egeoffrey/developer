@@ -1,89 +1,36 @@
-# Developing with eGeoffrey
 
-If you want to contribute to eGeoffrey, you can either enhance an existing package or create a new one.
-
-## Enhance/Fix an Existing Package
-
-Generally speaking, each package is associated to a git repository which is owned by a user. So to enhance or fix an existing package, you would need to:
-
-* Go and visit the Github repository (which is in the manifest file) where the package resides
-* Fork the repository
-* Do the necessary changes
-* Submit a PR (Pull Request)
-* The author will take care of validating your contribution, merging the new content and building a new version
-
-## Develop a New Package 
-
-### System Requirements
-
-To develop with eGeoffrey you would need to following software installed on your system:
-
-* **Docker** and **docker-compose**
-    * usually already installed by the eGeoffrey installed
-    * ensure you can build for multiple architectures since eGeoffrey's packages have to be all distributed for both amd64 and arm32v6 architectures
-* **Python**
-    * not strictly required but useful for running your package outside the Docker container before building it for testing purposes
-    * ensure the required SDK dependencies are installed with pip (e.g. paho-mqtt requests tinynumpy pyyaml yq apscheduler)
-* **egeoffrey-cli**
-    * usually already installed by the eGeoffrey installed
-    * the utility has meny developer tools built in
-* **egeoffrey-sdk**
-    * not strictly required but useful for running your package outside the Docker container before building it for testing purposes
-    * clone the https://github.com/egeoffrey/egeoffrey-sdk somewhere
-
-### Development Workflow
-
-Before starting developing, get familiar with the eGeoffrey SDK first by going through all the information of the next  sections as well as review the code of other existing packages. 
-
-Now let's assume we want to create a new service called `service/example`:
-
-* **Setup your repository**:
-    * Initialize a new, empty repository with `egeoffrey-cli init_repo service example <your_github_user>` which will automatically:
-        * create a directory called `egeoffrey-service-example` 
-        * create inside it the package directory structure and other supporting files (.gitignore, .dockerignore, manifest.yml etc.)
-        * initialize the git repository 
-        * configure the remote URL to Github
-* **Develop your code**:
-    * open `service/example.py` and implement the logic of your module in the python file
-    * customize the manifest file
-    * customize the Dockerfile file, if needed
-    * if needed, place default configuration files in the `default_config` directory
-* **Test your code**:
-    * The simplest way to test your code is by building the package and running (see the build section)
-    * If you want to run your code outside of the Docker container:
-        * ensure all the python dependencies are installed on your system
-        * download or link the SDK cloned before in the root directory of your package in a directory called `sdk`
-        * configure environment variables accordingly (e.g. at least `EGEOFFREY_GATEWAY_HOSTNAME` and `EGEOFFREY_MODULES`)
-        * start the module with `python -m sdk.python.module.start`
-        * CTRL+C to stop the execution
-* **Commit changes to the code**:
-    * When you are fine with the code, run `egeoffrey-cli commit "<comment>"` which will automatically:
-        * increase the revision number of the current version of your package
-        * generate a README.md file
-        * commit the changes to the local repository
-        * push the changes to the remote repository
-    
-You can new proceed and build the package for distribution.
-
-### Updates
-
-Once your brand new code have been committed and the packages published, you may want to update your code to fix bugs and/or add new functionalities. To do this, follow the same development process above, but applying the paculiarities of the following scenarios:
-
-* If it is a minor change:
-    * edit the code
-    * run `egeoffrey-cli commit` which automatically increases the revision number and pushes the updated code to the remote repository
-    * run `egeoffrey-cli build` which automatically builds the updated Docker images and pushes them to the Docker registry
-* If it is a major change (e.g. you want to release a new version) that you want to make immediately available to your users:
-    * edit the code
-    * run `egeoffrey-cli new_version <version>` to change the version number
-    * run `egeoffrey-cli commit` which automatically pushes the updated code to the remote repository
-    * run `egeoffrey-cli build` which automatically builds the updated Docker images and pushes them to the Docker registry
-* If it is a change that you want to develop step by step and/or distribute to beta testers before making available to your users, create a dedicated branch for the development phase:
-    * edit the code
-    * run `egeoffrey-cli new_branch <branch_name>` to create a new development/dedicated branch
-    * optionally run `egeoffrey-cli new_version <version>` if you also want to change the version number
-    * run `egeoffrey-cli commit` to commit and push the updated code to the remote repository
-    * run `egeoffrey-cli build` to automatically build the updated Docker images and push them to the Docker registry. The resulting image will be named with the branch you provided above.
-    * install the package by referencing the branch explicitely or by modifying the existing `docker-compose.yml` file
-    * re-iterate with further changes and use `egeoffrey-cli commit` and `egeoffrey-cli build` to publish them out
-    * when ready to merge the changes back to the master branch, run `egeoffrey-cli merge` (which will do the merge and adjust the manifest file) followed again by `egeoffrey-cli commit` and `egeoffrey-cli build` to publish the updated code/images
+1. **Edit your code** by opening in your repository the file `service/example.py` (since in this example we are creating a "service" called "example") and implement the logic of your module within the [SDK callbacks](/sdk/classes/module/) below:
+    * Define in `on_init()` what to do when the module is initialized (e.g. initializing variables, requesting configuration files, etc.)
+    * Define in `on_start()` what to do when the module is started after having received the required configuration files (e.g. connect to a serial port)
+        * For sensors configured in "push" mode, whatever process you are running it is supposed to associate incoming data with registered sensors and send to `controller/hub` a message with `IN` as "command" and the sensor_id as "args" with a payload "value" set to whatever value you want to associate to the sensor (e.g. its new measure)
+    * Optionally define in `on_stop()` what to do just before the module is shutting down (e.g. disconnect from a serial port)
+    * Define in `on_configuration()` what to do when receiving a new/updated configurations, if requested a configuration file in `on_init()`:
+        * If receiving a configuration file you directly manage (e.g. created by your module), check if needs to be updated since you don't know which version of your code it was previously running
+        * If implementing a "service", register/unregister the sensors associated with your module through `register_sensor()/unregister_sensor()`
+            * sensors configured in "pull" mode will be automatically scheduled based on their configuration
+    * Optionally define in `on_message(message)` what to do when receiving a new message from the bus
+        * For sensors configured as "pull", a message with `command` set to `IN` will be received containing the configuration of the sensor which needs to be polled. Your code is expected to reply to the message with a payload "value" set to whatever value you want to associate to the sensor (e.g. its new measure)
+        * For sensors configured as "actuators", a message with `command` set to `OUT` will be received containing the configuration of the sensor which needs to actuated upon. 
+    * For `notification` modules only, define in `on_notify()` what to do when receiving a new notification
+1. Open and **customize the [manifest file](/sdk/manifest/)**:
+    * Edit the description of the package, the tags (space-separated), the icon and the description of the module
+    * Ensure the links to the repositories on GitHub and DockerHub are correct (format is `<username>/<repository_name>`)
+    * If your module requires a configuration file (e.g. containing the serial port it has to connect to), add a `module_configuration` to your module providing its configuration directives. This will be used by the GUI to render the configuration wizard.
+    * If your module is a "Service", for each of "pull", "push", "actuator" mode (depending which mode the service supports) add a `service_configuration` providing the directives the GUI will use to render the wizard when a sensor is associated to this module
+    * Optionally add a `container_config` directive if you want to instruct `egeoffrey-cli` to customize the container configuration when installing the package (e.g. by mapping the physical serial port to the container)
+    * If for any reason you need to build against a specific version of the SDK, add a `sdk_branch` directive
+1. **Customize the `Dockerfile`** file in the root directory of your repository which will be used by the build process to create the the target Docker image which will ultimately responsible for running your code:
+    * Select the appropriate [SDK base image](/sdk/use/) in the `FROM` directive
+    * Point out any Python dependencies to be installed in the target cointainer (`RUN pip install <package_name>`)
+    * Point out any Operating System dependencies to be installed in the target cointainer (with `apt-get` or `apk` depending on the base image selected)
+    * Optionally add any customization to the target image with additional `RUN` directives
+    * Optionally add a file called `docker-init.sh` into `$WORKDIR` if you need to run any custom commands within the container just before starting your eGeoffrey module
+1. Optionally place any **default configuration files** in the `default_config` directory in YAML format with a `yml` extension (for more information see the [Configuration Management](/architecture/configuration/) page). Those will be retrieved by `controller/config` once your module connects to the gateway and saved with the other configuration files so please ensure to create them in a directory structure compliant with the configuration module.
+1. **Commit the changes** to your code with e.g. `egeoffrey-cli commit "<comment>"`. This will automatically:
+    * Commit the chances to the local repository
+    * Push the new code to the remote repository on GitHub
+    * Trigger a GitHub Action which will:
+        * Test your eGeoffrey module code
+        * Package it in a Docker image for multiple CPU architectures
+        * Publish the images to your Dockerhub account for distribution
+1. **Verify the images** are available in your DockerHub account. In case of failure in the build process, you should receive an email notification

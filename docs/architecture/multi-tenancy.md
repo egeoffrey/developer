@@ -1,4 +1,3 @@
-# Multi Tenancy
 
 Having the ability to run multiple houses is key and a differentiator for eGeoffrey. This allows to easily host multiple users within  the same environment or even deliver eGeoffrey-as-a-service to multiple house. To ensure maximum isolation, confidentiality of the data and flexibility to run different versions of the software for each house, the following approach has been adopted.
 

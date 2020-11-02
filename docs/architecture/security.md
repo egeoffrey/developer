@@ -1,6 +1,5 @@
-# Security
 
-The design choice has been to have a (strong) layer enforced by the mqtt broker for every module belonging to the same house and second (weaker) layer to handle users within the same house implemented within the application.
+The design choice has been to have a (strong) layer enforced by the MQTT broker for every module belonging to the same house and second (weaker) layer to handle users within the same house implemented within the application.
 
 * This avoids creating a new MQTT user for every new user in the house since eGeoffrey has no access to MQTT configuration
 * allow implementing additional capabilities delegating to e.g. house admin users complete control over their user base, setting/resetting passwords etc. 

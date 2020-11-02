@@ -1,12 +1,11 @@
-# Configuration
 
-The configuration of any eGeoffrey module is managed by `controller/config`. This is because in a distributed deployment you may want to keep the configuration of all your components in a single location, regardless of where they are. For this reason, `controller/config` is the only module which has data persistence requirements. 
+The configuration of any eGeoffrey module is managed by `controller/config`.  This is because in a distributed deployment you may want to keep the configuration of all your components in a single location, regardless the modules originating the file and which one is using them. 
 
 ## Publish the Configuration
 
-As anything else in eGeoffrey, also configuration distribution is happening through the message bus. This allows modules to subscribe to the configuration they are expecting and configuration changes handled without the need to restart the module since the module will receive a configuration callback once an updated file is re-published.
+As anything else in eGeoffrey, also configuration distribution is happening through the message bus. This allows modules to subscribe to the configuration they are expecting and configuration changes handled without the need to restart the module since it will receive a configuration callback once an updated file is re-published.
 
-Upon startup, the controller/config reads out all the files in the `config` directory and publishes them on MQTT with the same structure and according to these principles:
+Upon startup, the `controller/config` reads out all the files in the `config` directory and publishes them on MQTT with the same structure and according to these principles:
 
 * The config module has zero-knowledge about which module needs which file and which settings each file has to have. This is up to the receiving module
 * Configuration files are in a YAML format
@@ -30,10 +29,9 @@ Once the listener is added, the configuration will be received in the `on_config
 
 ## Validate the Configuration
 
-controller/config just ensure the file is in a valid YAML format but is up to the receiving module to validate the file. eGeoffrey SDK makes available `is_valid_configuration(settings, configuration)` to ensure all the items of an array of settings are included in the configuration object provided. 
+`controller/config` just ensure the file is in a valid YAML format but is up to the receiving module to validate the file. eGeoffrey SDK makes available `is_valid_configuration(settings, configuration)` to ensure all the items of an array of settings are included in the configuration object provided. 
 
 Returning `false` from a configuration message received by `on_configuration(message)` will instruct the module to just ignore the file.
-
 
 ## Required Configuration Files
 
