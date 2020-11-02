@@ -4,7 +4,7 @@ FROM nginx:alpine
 RUN apk update && apk add python py-pip && rm -rf /var/cache/apk/*
 
 # install mkdocs and optional themes
-RUN pip install mkdocs mkdocs-material
+RUN pip install mkdocs mkdocs-material==4.6.0
 
 # copy the files 
 COPY . $WORKDIR
