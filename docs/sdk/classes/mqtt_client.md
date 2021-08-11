@@ -12,4 +12,5 @@ The following functions are provided:
 * `unsubscribe(topic)`: unsubscribe from a topic
 * `start()`:  connect to the MQTT broker and subscribed to the requested topics
 * `add_listener(from_module, to_module, command, filter, wait_for_it)`:  add a listener for the given request
+* `add_configuration_listener(self, house_id, args, wait_for_it)`: add a listener for a given configuration
 * `stop()`: disconnect from the MQTT broker

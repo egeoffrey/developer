@@ -12,7 +12,7 @@ Upon startup, the `controller/config` reads out all the files in the `config` di
 * Subdirectories make up the topic structure. The filename will be the last part of the topic, with the extension removed (e.g. a file in `subdir/dir/filename.yml` will be published in the topic `subdir/dir/filename`
 * Files beginning with dot (.) or without a .yml extension are ignored
 * Configuration is published under a CONF command. This prevents conflicts with other messages
-* Publishing have "retain" flag set so the configuration is always available for the module service subscribing that topic. No matter when it starts, it will receive the configuration straight away
+* When using gateway protocol v1, publishing have "retain" flag set so the configuration is always available for the module service subscribing that topic (no matter when it starts, it will receive the configuration straight away). If using protocol v2, the configuration is not retained on the message bus and the SDK takes care of distributing the configurations required by each module
 * The latest version only of each configuration file is kept on the bus
 
 ## Receive the Configuration

@@ -35,6 +35,7 @@ The following functions are also provided when inhering from one of `Module`'s s
 - `add_configuration_listener(args, version=None, wait_for_it=False)`: add a listener for the given configuration request (will call on_configuration())
 - `add_request_listener(from_module, command, args)`: add a listener for the messages addressed to this module (will call on_message())
 - `add_broadcast_listener(from_module, command, args)`: add a listener for broadcasted messages from the given module (will call on_message())
+- `add_manifest_listener(self, from_module="+/+")`:  add a listner for broadcasted manifests (will call on_message())
 - `add_inspection_listener(from_module, to_module, command, args)`: add a listener for intercepting messages from a given module to a given module (will call on_message())
 - `remove_listener(topic)`: remove a topic previously subscribed
 - `send(message)`: send a message to another module

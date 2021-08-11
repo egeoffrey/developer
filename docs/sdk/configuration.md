@@ -9,9 +9,12 @@ Specifically, the following are the variables the SDK consumes during the bootst
 * `EGEOFFREY_GATEWAY_PORT`: the port of the gateway (default to `443`)
 * `EGEOFFREY_GATEWAY_TRANSPORT`: the transport protocol for connecting to the gateway (default to `websockets`)
 * `EGEOFFREY_GATEWAY_SSL`: if the gateway supports SSL (default to `0`)
+* `EGEOFFREY_GATEWAY_VERSION`: the gateway protocol version to use (default to `1`)
 * `EGEOFFREY_GATEWAY_CA_CERT`: if SSL is enabled, the path of the Certification Authority certificate (default to `/etc/ssl/certs`)
 * `EGEOFFREY_GATEWAY_CERTFILE`: if the gateway enforce client certificate authentication, the path of the client certificate
 * `EGEOFFREY_GATEWAY_KEYFILE`: if the gateway enforce client certificate authentication, the path of the certificate keyfile
+* `EGEOFFREY_GATEWAY_QOS_SUBSCRIBE`: the QoS to use when subscribing a topic on the gateway (default to `2`)
+* `EGEOFFREY_GATEWAY_QOS_PUBLISH`: the QoS to use when publishing a message to the gateway (default to `2`)
 * `EGEOFFREY_ID`: your house identifier (default to `house`)
 * `EGEOFFREY_PASSCODE`: your house passcode (default empty)
 * `EGEOFFREY_MODULES` comma separated list of the modules to run in the format `<scope_name>/<module_name>` (e.g. `controller/logger, controller/config`)

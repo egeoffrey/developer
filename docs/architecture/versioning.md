@@ -24,7 +24,7 @@ Every new commit will be then against this branch and only user "subscribed" to 
 If a end user needs to install a package belonging to a branch different than `master`, this has to be made explicit with `egeoffrey-cli install package:branch` (e.g. `egeoffrey-cli install egeoffrey-service-example:development`).
 Once selected, a branch this can only be changed manually by modifying the `docker-compose.yml` file.
 
-If your development cycle is finished and e.g. you want to promote the code in the `development` branch into the `master` you can run `egeoffrey-cli merge master`. This will merge all the changes done in the development branch into master. At the next commit, your master package will include all those changes.
+If your development cycle is finished and e.g. you want to promote the code in the `development` branch into the `master` you can run `egeoffrey-cli merge`. This will merge all the changes done in the development branch into master. At the next commit, your master package will include all those changes.
 
 ### Creating a new Version
 
