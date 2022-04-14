@@ -26,7 +26,7 @@
     * Optionally add any customization to the target image with additional `RUN` directives
     * Optionally add a file called `docker-init.sh` into `$WORKDIR` if you need to run any custom commands within the container just before starting your eGeoffrey module
 1. Optionally place any **default configuration files** in the `default_config` directory in YAML format with a `yml` extension (for more information see the [Configuration Management](/architecture/configuration/) page). Those will be retrieved by `controller/config` once your module connects to the gateway and saved with the other configuration files so please ensure to create them in a directory structure compliant with the configuration module.
-1. **Commit the changes** to your code with e.g. `egeoffrey-cli commit "<comment>"`. This will automatically:
+1. **Commit the changes** to your code with e.g. `egeoffrey-cli repo commit "<comment>"`. This will automatically:
     * Commit the chances to the local repository
     * Push the new code to the remote repository on GitHub
     * Trigger a GitHub Action which will:

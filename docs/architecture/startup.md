@@ -18,4 +18,4 @@ Since by definition Docker containers are stateless, packages which need a persi
 
 ## Starting eGeoffrey
 
-When running `sudo egeoffrey-cli start`, each of the configured eGeoffrey package installed by the user will be run in independent Docker containers. 
+When running `sudo egeoffrey-cli house start`, each of the configured eGeoffrey package installed by the user will be run in independent Docker containers. 

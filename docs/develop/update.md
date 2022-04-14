@@ -3,7 +3,7 @@ In eGeoffrey, each package has its own lifecycle, independent from the other com
 
 At every commit of your code, the revision number will be automatically increased. Please review the [eGeoffrey Versioning](/architecture/versioning/) page for more details on the versioning capabilities.
 
-End users will be notified a new version is available and will upgrade accordingly. An end user can update all the installed packages by running `egeoffrey-cli update` or a given package with `egeoffrey-cli <package_name>`. A `sudo egeoffrey-cli start` is then required to make the newly downloaded image up and running.
+End users will be notified a new version is available and will upgrade accordingly. An end user can update all the installed packages by running `egeoffrey-cli package update` or a given package with `egeoffrey-cli package  update <package_name>`. A `sudo egeoffrey-cli house start` is then required to make the newly downloaded image up and running.
 
 There is no concept of automatic updates in eGeoffrey to prevent users from breaking up local dependencies they might have.
 

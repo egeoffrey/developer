@@ -46,3 +46,18 @@ Modules expect to find the entire configuration pinned (retained) on the message
 
 No configuration is unsolicited published to the bus by `controller/config` which will instead send the configuration over to every module requesting it. 
 Version 2 requires packages be built against SDK >= v1.1, egeoffrey-controller >= v1.4 and egeoffrey-gui >= v1.4.
+
+## Advanced Settings
+
+The following additional environment variables can control specific advanced settings:
+
+* `EGEOFFREY_GATEWAY_ACL`: if ACLs on the gateway have to be enabled
+* `EGEOFFREY_GATEWAY_USERS`: set users and passwords for accessing the gateway (in the format user1:password1\nuser2:password2)
+
+Additionally an eGeoffrey gateway can be connected (briged) to a remote gateway so that messages sent on one broker will be propataged to another borker and viceversa:
+
+* `REMOTE_EGEOFFREY_GATEWAY_HOSTNAME`: the hostname or ip address of the remote gateway
+* `REMOTE_EGEOFFREY_GATEWAY_PORT`: the port of the remote gateway
+* `REMOTE_EGEOFFREY_GATEWAY_SSL`: if the remote gateway supports SSL
+* `REMOTE_EGEOFFREY_ID`: username for the remote gateway
+* `REMOTE_EGEOFFREY_PASSCODE`: password for the remote gateway
