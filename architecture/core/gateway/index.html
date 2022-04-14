@@ -487,6 +487,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#advanced-settings" class="md-nav__link">
+    Advanced Settings
+  </a>
+  
+</li>
+      
       
       
       
@@ -946,6 +953,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#advanced-settings" class="md-nav__link">
+    Advanced Settings
+  </a>
+  
+</li>
+      
       
       
       
@@ -1004,6 +1018,20 @@ This is once again completely transparent for the user since the underlying SDK 
 <h4 id="version-2">Version 2</h4>
 <p>No configuration is unsolicited published to the bus by <code>controller/config</code> which will instead send the configuration over to every module requesting it. 
 Version 2 requires packages be built against SDK &gt;= v1.1, egeoffrey-controller &gt;= v1.4 and egeoffrey-gui &gt;= v1.4.</p>
+<h2 id="advanced-settings">Advanced Settings</h2>
+<p>The following additional environment variables can control specific advanced settings:</p>
+<ul>
+<li><code>EGEOFFREY_GATEWAY_ACL</code>: if ACLs on the gateway have to be enabled</li>
+<li><code>EGEOFFREY_GATEWAY_USERS</code>: set users and passwords for accessing the gateway (in the format user1:password1\nuser2:password2)</li>
+</ul>
+<p>Additionally an eGeoffrey gateway can be connected (briged) to a remote gateway so that messages sent on one broker will be propataged to another borker and viceversa:</p>
+<ul>
+<li><code>REMOTE_EGEOFFREY_GATEWAY_HOSTNAME</code>: the hostname or ip address of the remote gateway</li>
+<li><code>REMOTE_EGEOFFREY_GATEWAY_PORT</code>: the port of the remote gateway</li>
+<li><code>REMOTE_EGEOFFREY_GATEWAY_SSL</code>: if the remote gateway supports SSL</li>
+<li><code>REMOTE_EGEOFFREY_ID</code>: username for the remote gateway</li>
+<li><code>REMOTE_EGEOFFREY_PASSCODE</code>: password for the remote gateway</li>
+</ul>
                 
                   
                 

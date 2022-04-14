@@ -2,192 +2,192 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
      <loc>https://www.egeoffrey.com/</loc>
-     <lastmod>2022-04-02</lastmod>
+     <lastmod>2022-04-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://www.egeoffrey.com/develop/requirements/</loc>
-     <lastmod>2022-04-02</lastmod>
+     <lastmod>2022-04-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://www.egeoffrey.com/develop/setup/</loc>
-     <lastmod>2022-04-02</lastmod>
+     <lastmod>2022-04-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://www.egeoffrey.com/develop/develop/</loc>
-     <lastmod>2022-04-02</lastmod>
+     <lastmod>2022-04-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://www.egeoffrey.com/develop/test/</loc>
-     <lastmod>2022-04-02</lastmod>
+     <lastmod>2022-04-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://www.egeoffrey.com/develop/distribute/</loc>
-     <lastmod>2022-04-02</lastmod>
+     <lastmod>2022-04-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://www.egeoffrey.com/develop/update/</loc>
-     <lastmod>2022-04-02</lastmod>
+     <lastmod>2022-04-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://www.egeoffrey.com/develop/contribute/</loc>
-     <lastmod>2022-04-02</lastmod>
+     <lastmod>2022-04-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://www.egeoffrey.com/architecture/design/</loc>
-     <lastmod>2022-04-02</lastmod>
+     <lastmod>2022-04-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://www.egeoffrey.com/architecture/definitions/</loc>
-     <lastmod>2022-04-02</lastmod>
+     <lastmod>2022-04-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://www.egeoffrey.com/architecture/components/</loc>
-     <lastmod>2022-04-02</lastmod>
+     <lastmod>2022-04-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://www.egeoffrey.com/architecture/core/gateway/</loc>
-     <lastmod>2022-04-02</lastmod>
+     <lastmod>2022-04-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://www.egeoffrey.com/architecture/core/database/</loc>
-     <lastmod>2022-04-02</lastmod>
+     <lastmod>2022-04-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://www.egeoffrey.com/architecture/core/controller/</loc>
-     <lastmod>2022-04-02</lastmod>
+     <lastmod>2022-04-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://www.egeoffrey.com/architecture/core/gui/</loc>
-     <lastmod>2022-04-02</lastmod>
+     <lastmod>2022-04-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://www.egeoffrey.com/architecture/configuration/</loc>
-     <lastmod>2022-04-02</lastmod>
+     <lastmod>2022-04-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://www.egeoffrey.com/architecture/startup/</loc>
-     <lastmod>2022-04-02</lastmod>
+     <lastmod>2022-04-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://www.egeoffrey.com/architecture/versioning/</loc>
-     <lastmod>2022-04-02</lastmod>
+     <lastmod>2022-04-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://www.egeoffrey.com/architecture/security/</loc>
-     <lastmod>2022-04-02</lastmod>
+     <lastmod>2022-04-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://www.egeoffrey.com/architecture/multi-tenancy/</loc>
-     <lastmod>2022-04-02</lastmod>
+     <lastmod>2022-04-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://www.egeoffrey.com/architecture/deployment/</loc>
-     <lastmod>2022-04-02</lastmod>
+     <lastmod>2022-04-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://www.egeoffrey.com/sdk/overview/</loc>
-     <lastmod>2022-04-02</lastmod>
+     <lastmod>2022-04-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://www.egeoffrey.com/sdk/use/</loc>
-     <lastmod>2022-04-02</lastmod>
+     <lastmod>2022-04-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://www.egeoffrey.com/sdk/manifest/</loc>
-     <lastmod>2022-04-02</lastmod>
+     <lastmod>2022-04-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://www.egeoffrey.com/sdk/configuration/</loc>
-     <lastmod>2022-04-02</lastmod>
+     <lastmod>2022-04-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://www.egeoffrey.com/sdk/bootstrap/</loc>
-     <lastmod>2022-04-02</lastmod>
+     <lastmod>2022-04-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://www.egeoffrey.com/sdk/classes/module/</loc>
-     <lastmod>2022-04-02</lastmod>
+     <lastmod>2022-04-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://www.egeoffrey.com/sdk/classes/message/</loc>
-     <lastmod>2022-04-02</lastmod>
+     <lastmod>2022-04-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://www.egeoffrey.com/sdk/classes/session/</loc>
-     <lastmod>2022-04-02</lastmod>
+     <lastmod>2022-04-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://www.egeoffrey.com/sdk/classes/mqtt_client/</loc>
-     <lastmod>2022-04-02</lastmod>
+     <lastmod>2022-04-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://www.egeoffrey.com/sdk/classes/scheduler/</loc>
-     <lastmod>2022-04-02</lastmod>
+     <lastmod>2022-04-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://www.egeoffrey.com/sdk/classes/cache/</loc>
-     <lastmod>2022-04-02</lastmod>
+     <lastmod>2022-04-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://www.egeoffrey.com/sdk/utils/command/</loc>
-     <lastmod>2022-04-02</lastmod>
+     <lastmod>2022-04-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://www.egeoffrey.com/sdk/utils/datetimeutils/</loc>
-     <lastmod>2022-04-02</lastmod>
+     <lastmod>2022-04-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://www.egeoffrey.com/sdk/utils/exceptions/</loc>
-     <lastmod>2022-04-02</lastmod>
+     <lastmod>2022-04-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://www.egeoffrey.com/sdk/utils/numbers/</loc>
-     <lastmod>2022-04-02</lastmod>
+     <lastmod>2022-04-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://www.egeoffrey.com/sdk/utils/strings/</loc>
-     <lastmod>2022-04-02</lastmod>
+     <lastmod>2022-04-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://www.egeoffrey.com/sdk/utils/web/</loc>
-     <lastmod>2022-04-02</lastmod>
+     <lastmod>2022-04-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>

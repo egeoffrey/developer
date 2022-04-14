@@ -885,7 +885,7 @@
 </ul>
 </li>
 <li>Optionally place any <strong>default configuration files</strong> in the <code>default_config</code> directory in YAML format with a <code>yml</code> extension (for more information see the <a href="/architecture/configuration/">Configuration Management</a> page). Those will be retrieved by <code>controller/config</code> once your module connects to the gateway and saved with the other configuration files so please ensure to create them in a directory structure compliant with the configuration module.</li>
-<li><strong>Commit the changes</strong> to your code with e.g. <code>egeoffrey-cli commit "&lt;comment&gt;"</code>. This will automatically:<ul>
+<li><strong>Commit the changes</strong> to your code with e.g. <code>egeoffrey-cli repo commit "&lt;comment&gt;"</code>. This will automatically:<ul>
 <li>Commit the chances to the local repository</li>
 <li>Push the new code to the remote repository on GitHub</li>
 <li>Trigger a GitHub Action which will:<ul>

@@ -941,22 +941,22 @@
 <ul>
 <li><strong>branch</strong>: the branch to which the code belongs to. This information is used as a <em>channel</em> for updates (for example developers can allow users to select between a stable and development branch and they will always receive the latest version of the given channel). It is required to have a <code>master</code> branch updated with the latest stable version.</li>
 <li><strong>version</strong>: the major version of the package (e.g. 1.0, 1.1, etc.). The Docker image of the latest release of each major version will persist so users can always downgrade to the latest version of each major release.</li>
-<li><strong>revision</strong>: the revision number (e.g. 21, 22, etc.) is incremented at EVERY new commit (automatically when developers use <code>egeoffre-cli commit</code>). </li>
+<li><strong>revision</strong>: the revision number (e.g. 21, 22, etc.) is incremented at EVERY new commit (automatically when developers use <code>egeoffre-cli repo commit</code>). </li>
 </ul>
 <p>The overall version of a package is then in the format <code>&lt;version&gt;-&lt;revision&gt;</code> (e.g. <code>1.0-22</code>) and is independent accross branches. </p>
 <p>A user is notified a new version is available if the latest revision and/or version for the branch the user has installed (<code>master</code> by default) are greater than the one of the package currently installed.</p>
 <p>When starting to develop your own package, the first commit will be version <code>1.0-1</code> in the <code>master</code> branch and at every commit the revision number will be increased.</p>
 <h3 id="creating-a-new-branch">Creating a new Branch</h3>
 <p>If for example you are developing the new version of your package, don't want end users to use to automatically download this version until fully tested but still you want to allow a limited set of beta testers to use it, you may want to create a new branch (e.g. called development) which will act as an independent update channel.</p>
-<p>Developers can create a new branch by running <code>egeoffre-cli new_branch &lt;branch_name&gt;</code> (e.g. <code>egeoffre-cli new_branch development</code>). The utility automatically updates the manifest file with the new branch name and checkout into it.
+<p>Developers can create a new branch by running <code>egeoffre-cli repo branch &lt;branch_name&gt;</code> (e.g. <code>egeoffre-cli repo branch development</code>). The utility automatically updates the manifest file with the new branch name and checkout into it.
 Every new commit will be then against this branch and only user "subscribed" to that branch will get the latest version.</p>
-<p>If a end user needs to install a package belonging to a branch different than <code>master</code>, this has to be made explicit with <code>egeoffrey-cli install package:branch</code> (e.g. <code>egeoffrey-cli install egeoffrey-service-example:development</code>).
+<p>If a end user needs to install a package belonging to a branch different than <code>master</code>, this has to be made explicit with <code>egeoffrey-cli package install package:branch</code> (e.g. <code>egeoffrey-cli package install egeoffrey-service-example:development</code>).
 Once selected, a branch this can only be changed manually by modifying the <code>docker-compose.yml</code> file.</p>
-<p>If your development cycle is finished and e.g. you want to promote the code in the <code>development</code> branch into the <code>master</code> you can run <code>egeoffrey-cli merge</code>. This will merge all the changes done in the development branch into master. At the next commit, your master package will include all those changes.</p>
+<p>If your development cycle is finished and e.g. you want to promote the code in the <code>development</code> branch into the <code>master</code> you can run <code>egeoffrey-cli repo merge</code>. This will merge all the changes done in the development branch into master. At the next commit, your master package will include all those changes.</p>
 <h3 id="creating-a-new-version">Creating a new Version</h3>
-<p>Developers can switch to a new version by running <code>egeoffre-cli new_version &lt;version&gt;</code> (e.g. <code>egeoffre-cli new_version 1.1</code>). The utility automatically updates the manifest file with the new version.</p>
+<p>Developers can switch to a new version by running <code>egeoffre-cli repo version &lt;version&gt;</code> (e.g. <code>egeoffre-cli repo version 1.1</code>). The utility automatically updates the manifest file with the new version.</p>
 <h3 id="creating-a-new-revision">Creating a new Revision</h3>
-<p>The revision number is incremented automatically at every commit when running <code>egeoffre-cli commit</code>.</p>
+<p>The revision number is incremented automatically at every commit when running <code>egeoffre-cli repo commit</code>.</p>
                 
                   
                 

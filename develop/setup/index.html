@@ -852,7 +852,7 @@
 </li>
 <li><strong>Choose a name</strong> for the package you want to build (e.g. we are creating a "service" called "example")</li>
 <li><strong>Create the local repository</strong> for hosting your code:<ul>
-<li>Initialize a new, empty repository with <code>egeoffrey-cli init_repo service example &lt;your_github_user&gt;</code> which will automatically:<ul>
+<li>Initialize a new, empty repository with <code>egeoffrey-cli repo init service example &lt;your_github_user&gt;</code> which will automatically:<ul>
 <li>create a directory called <code>egeoffrey-service-example</code> </li>
 <li>create inside it the package directory structure and other supporting files (<code>.gitignore</code>, <code>.dockerignore</code>, <code>manifest.yml</code> etc.)</li>
 <li>initialize the git repository </li>
@@ -863,7 +863,7 @@
 </li>
 <li>Create the <strong>remote repository</strong> in your GitHub account, in this example it has to be called <code>egeoffrey-service-example</code></li>
 <li>Always on GitHub, go to the "Settings" of your repository, click on "Secrets" and create a secret called <code>DOCKERHUB_USERNAME</code> storing your DockerHub username and <code>DOCKERHUB_TOKEN</code> storing the DockerHub access code previously created. This will be used by the build process to automatically push the images to DockerHub</li>
-<li>Go into the directory of your local repostiory and <strong>commit your code</strong> by running <code>egeoffrey-cli commit "First commit"</code></li>
+<li>Go into the directory of your local repostiory and <strong>commit your code</strong> by running <code>egeoffrey-cli repo commit "First commit"</code></li>
 <li>Ensure the <strong>source code has been pushed</strong> by visit your repository on GitHub</li>
 <li>Always in your repository, click "Actions" and ensure the <strong>"Build and Publish eGeoffrey Package" workflow is completed</strong> (showing up green, it could take a couple of minutes) </li>
 <li>Ensure the Docker <strong>images have been pushed to DockerHub</strong> by visiting your DockerHub account (for each supported CPU architecture two images are built, one named as branch and another named after the version number)</li>
